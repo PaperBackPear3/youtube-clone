@@ -19,5 +19,5 @@ yarn-error.log
 /.idea
 /.vscode
 
-backend/programmatic-types.graphql
-backend/schema-directives.graphql
+programmatic-types.graphql
+schema-directives.graphql
