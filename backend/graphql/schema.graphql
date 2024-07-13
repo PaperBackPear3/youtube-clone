@@ -19,11 +19,19 @@ type Query {
     ): [User!]! @paginate(defaultCount: 10)
 }
 
+type Mutation {
+  createUser(name: String!, email: String!, password: String!): User
+  updateUser(id: ID, email: String, password: String): User
+  deleteUser(id: ID): User
+}
+
+
+
 "Account of a person who utilizes this application."
 type User {
     "Unique primary key."
     id: ID!
-
+ 
     "Non-unique name."
     name: String!
 
