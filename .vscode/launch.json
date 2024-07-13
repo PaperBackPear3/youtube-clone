@@ -8,9 +8,9 @@
             "name": "Listen for Xdebug",
             "type": "php",
             "request": "launch",
-            "port": 9003,
+            "port": 9000,
             "pathMappings": {
-                "var/www/html": "${workspaceFolder}"
+                "/var/www/html": "${workspaceFolder}/backend/"
             },
             "xdebugSettings": {
                 "max_data": -1,
