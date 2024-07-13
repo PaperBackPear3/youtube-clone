@@ -5,10 +5,16 @@
 
 ### service used
 
-- **[Laravel]()**
-- **[MySQL]()**
-- **[Redis]()**
-- **[MinIO]()**
+#### Backend
+- **[Laravel](https://laravel.com/)**
+- **[MySQL](https://www.mysql.com/en/)**
+- **[Redis](https://redis.io/)**
+- **[MinIO](https://min.io/)**
+
+#### Frontend
+
+- **[Vue](https://vuejs.org/)**
+
 
 ## Local Installation and Setup
 #### requirements
