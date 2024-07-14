@@ -1,0 +1,23 @@
+
+type Query {
+    channels: [Channel!]! @all
+    channel(id: ID! @eq): Channel @find
+}
+
+type Mutation {
+    createChannel(name: String!, description: String!): Channel
+    updateChannel(id: ID!, name: String, description: String): Channel @update
+    deleteChannel(id: ID!): Channel @delete
+}
+
+type Channel {
+    id: ID!
+    name: String!
+    members_count: Int!
+    image: String!
+    avatar: String!
+    description: String!
+    created_at: DateTime!
+    updated_at: DateTime!
+    deleted_at: DateTime!
+}

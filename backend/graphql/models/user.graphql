@@ -51,6 +51,3 @@ type User {
     "When the account was deleted"
     deleted_at: DateTime!
 }
-
-#import models/user.graphql
-#import models/channel.graphql
