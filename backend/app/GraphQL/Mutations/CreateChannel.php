@@ -12,7 +12,7 @@ final readonly class CreateChannel
         $user = auth()->user();
 
         $channel = new Channel();
-        $channel->user_id = $user->id;
+        $channel->user_id = $user->id ?? rand(1, 10);
         $channel->name = $args['name'];
         $channel->description = $args['description'];
         $channel->save();
