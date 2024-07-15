@@ -39,7 +39,7 @@ cd youtube-clone
 ## Backend Setup
 - Refer to backend [readme.md](/backend/README.md)
 ## Frontend Setup
-- Refer to backend [readme.md](/backend/README.md)
+- Refer to backend [readme.md](/frontend/README.md)
 
 ## License
 
