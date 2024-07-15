@@ -1,6 +1,11 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace App\GraphQL\Mutations;
+
+use Illuminate\Support\Arr;
+use Illuminate\Support\Facades\Auth;
 
 final readonly class Logout
 {
@@ -12,7 +17,7 @@ final readonly class Logout
     {
         // Plain Laravel: Auth::guard()
         // Laravel Sanctum: Auth::guard(Arr::first(config('sanctum.guard', 'web')))
-        $guard = ?;
+        $guard =  Auth::guard(Arr::first(config('sanctum.guard', 'web')));
 
         $user = $guard->user();
         $guard->logout();

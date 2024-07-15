@@ -1,6 +1,12 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace App\GraphQL\Mutations;
+
+use GrahamCampbell\ResultType\Error;
+use Illuminate\Support\Arr;
+use Illuminate\Support\Facades\Auth;
 
 final readonly class Login
 {
@@ -12,9 +18,9 @@ final readonly class Login
     {
         // Plain Laravel: Auth::guard()
         // Laravel Sanctum: Auth::guard(Arr::first(config('sanctum.guard')))
-        $guard = ?;
+        $guard =  Auth::guard(Arr::first(config('sanctum.guard')));
 
-        if( ! $guard->attempt($args)) {
+        if (!$guard->attempt($args)) {
             throw new Error('Invalid credentials.');
         }
 
