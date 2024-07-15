@@ -1,0 +1,45 @@
+"Can be used as an argument to upload files using https://github.com/jaydenseric/graphql-multipart-request-spec"
+scalar Upload @scalar(class: "Nuwave\\Lighthouse\\Schema\\Types\\Scalars\\Upload")
+
+
+type Query{
+    videos: [Video!]! @all
+    video(id: ID! @eq): Video @find
+    channelVideos(channel_id: ID! @eq): [Video!]! @all
+}
+
+type Mutation{
+    # createVideo(
+    #     channel_id: ID!,
+    #     title: String!,
+    #     description: String!,
+    #     video_path: String!,
+    #     thumbnail:String
+    #     ): Video @customResolver(name: "createVideo")
+    updateVideo(id: ID!, title: String, description: String, video_url: String): Video @update
+    deleteVideo(id: ID!): Video @delete
+    # likeVideo(id: ID!): Video @customResolver(name: "likeVideo")
+    # dislikeVideo(id: ID!): Video @customResolver(name: "dislikeVideo")
+    # viewVideo(id: ID!): Video @customResolver(name: "viewVideo")
+    # commentVideo(id: ID!, comment: String!): Video @customResolver(name: "commentVideo")
+    # updateThumbnail(id: ID!, thumbnail: String!): Video @customResolver(name: "updateThumbnail")
+    "Upload a file that is publicly available."
+    uploadVideo(file: Upload! @validator): String 
+}
+
+
+type Video{
+    id: ID!
+    channel_id: ID!
+    title: String!
+    description: String!
+    video_path: String!
+    view_count: Int!
+    like_count: Int!
+    dislike_count: Int!
+    comment_count: Int!
+    thumbnail: String!
+    created_at: DateTime!
+    updated_at: DateTime!
+    deleted_at: DateTime!
+}

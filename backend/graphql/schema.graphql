@@ -54,3 +54,4 @@ type User {
 
 #import models/user.graphql
 #import models/channel.graphql
+#import models/video.graphql
