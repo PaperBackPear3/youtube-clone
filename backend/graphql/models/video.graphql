@@ -3,9 +3,10 @@ scalar Upload @scalar(class: "Nuwave\\Lighthouse\\Schema\\Types\\Scalars\\Upload
 
 
 type Query{
-    videos: [Video!]! @all
+    videos: [Video!]! @paginate(defaultCount: 10)
     video(id: ID! @eq): Video @find
-    channelVideos(channel_id: ID! @eq): [Video!]! @all
+    channelVideos(channel_id: ID! @eq): [Video!]! @paginate(defaultCount: 10)
+    searchVideos(query: String!): [Video!]!
 }
 
 type Mutation{
