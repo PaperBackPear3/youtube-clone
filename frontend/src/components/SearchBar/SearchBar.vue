@@ -1,7 +1,7 @@
 <script lang="ts">
 import { useQuery } from '@vue/apollo-composable';
 import gql from 'graphql-tag';
-import { computed, watch } from 'vue';
+import { computed } from 'vue';
 import { ref } from 'vue';
 
 
@@ -23,11 +23,6 @@ export default {
         const searchVideos = (event: KeyboardEvent) => {
             variables.value.userQuery = (event.target as HTMLInputElement).value
         }
-
-        watch(result, value => {
-            console.log(value, result)
-            console.log(value.searchVideos, result)
-        })
 
         const videos = computed(() => result.value?.searchVideos ?? [])
 

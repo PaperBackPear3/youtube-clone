@@ -1,7 +1,7 @@
 <script lang="ts">
 import { useQuery } from '@vue/apollo-composable';
 import gql from 'graphql-tag';
-import { computed, watch } from 'vue';
+import { computed } from 'vue';
 
 export default {
     setup() {
@@ -14,10 +14,6 @@ export default {
         }
       }
     `)
-        watch(result, value => {
-            console.log(value)
-        })
-
         const channels = computed(() => result.value?.channels ?? [])
         return { channels }
     },
