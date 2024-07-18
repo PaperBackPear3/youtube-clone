@@ -8,6 +8,5 @@ import SideBar from '@/components/SideBar/SideBar.vue';
     <div>
         <SearchBar />
         <SideBar/>
-        
     </div>
 </template>
