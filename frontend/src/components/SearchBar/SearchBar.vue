@@ -6,17 +6,6 @@ import { ref } from 'vue';
 
 
 export default {
-    // data() {
-    //     return {
-    //         userQuery: '',
-    //     }
-    // },
-    // methods: {
-    //     searchVideos(event: KeyboardEvent) {
-    //         this.userQuery = (event.target as HTMLInputElement).value
-    //     }
-    // },
-
     setup() {
         const variables = ref({
             userQuery: '',
