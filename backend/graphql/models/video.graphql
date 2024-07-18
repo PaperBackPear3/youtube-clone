@@ -16,14 +16,14 @@ type Mutation{
     #     description: String!,
     #     video_path: String!,
     #     thumbnail:String
-    #     ): Video @customResolver(name: "createVideo")
+    #     ): Video
     updateVideo(id: ID!, title: String, description: String, video_url: String): Video @update
     deleteVideo(id: ID!): Video @delete
-    # likeVideo(id: ID!): Video @customResolver(name: "likeVideo")
-    # dislikeVideo(id: ID!): Video @customResolver(name: "dislikeVideo")
-    # viewVideo(id: ID!): Video @customResolver(name: "viewVideo")
-    # commentVideo(id: ID!, comment: String!): Video @customResolver(name: "commentVideo")
-    # updateThumbnail(id: ID!, thumbnail: String!): Video @customResolver(name: "updateThumbnail")
+    # likeVideo(id: ID!): Video
+    # dislikeVideo(id: ID!): Video
+    # viewVideo(id: ID!): Video
+    # commentVideo(id: ID!, comment: String!): Video
+    # updateThumbnail(id: ID!, thumbnail: String!): Video
     "Upload a file that is publicly available."
     uploadVideo(file: Upload! @validator): String 
 }
