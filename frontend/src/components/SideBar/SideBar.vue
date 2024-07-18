@@ -1,4 +1,32 @@
-<script setup lang="ts" />
+<script lang="ts">
+import { useQuery } from '@vue/apollo-composable';
+import gql from 'graphql-tag';
+import { computed, watch } from 'vue';
+
+export default {
+    setup() {
+        const { result } = useQuery(gql`
+      query getChannels {
+        channels {
+            id
+            name
+            avatar
+        }
+      }
+    `)
+        watch(result, value => {
+            console.log(value)
+        })
+
+        const channels = computed(() => result.value?.channels ?? [])
+        return { channels }
+    },
+}
+
+
+</script>
+
+
 <template>
     <aside class="sidebar">
         <nav>
@@ -11,6 +39,17 @@
                 </li>
                 <li>
                     <RouterLink to="/channels">Your Videos</RouterLink>
+                </li>
+            </ul>
+        </nav>
+
+        <nav>
+            <h2>Channels</h2>
+            <ul v-if="channels">
+                <li v-for="channel in channels" :key="channel.id">
+                    {{ channel.name }}
+                    <!-- <img :src="channel.avatar" alt="channel avatar" /> -->
+                    <!-- <RouterLink :to="'/channels/' + channel.id">{{ channel.name }}</RouterLink> -->
                 </li>
             </ul>
         </nav>
