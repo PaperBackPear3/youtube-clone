@@ -31,16 +31,16 @@ type Mutation{
 
 type Video{
     id: ID!
-    channel_id: ID!
+    channel_id: ID
     title: String!
     description: String!
     video_path: String!
-    view_count: Int!
-    like_count: Int!
-    dislike_count: Int!
-    comment_count: Int!
-    thumbnail: String!
-    created_at: DateTime!
-    updated_at: DateTime!
-    deleted_at: DateTime!
+    views_count: Int
+    likes_count: Int
+    dislikes_count: Int
+    comments_count: Int
+    thumbnail: String
+    created_at: DateTime
+    updated_at: DateTime
+    deleted_at: DateTime
 }
