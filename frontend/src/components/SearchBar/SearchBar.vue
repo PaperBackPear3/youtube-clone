@@ -51,16 +51,20 @@ export default {
     <div v-if="loading">Loading...</div>
     <ul v-else-if="videos">
         <li v-for="video of videos" :key="video.id">
-            <div class="div-list">
-                <h2>
-                    titolo: {{ video.title }}
-                </h2>
+            <div>
+                <h1>
+                    <b>titolo: {{ video.title }}</b>
+                </h1>
                 <p>
                     description: {{ video.description }}
                 </p>
-                <div>
-                    duration: {{ video.duration }}
-                    views: {{ video.views_count }}
+                <div class='div-list'>
+                    <div>
+                        duration: {{ (Number(video.duration) / 60).toFixed(2) }} min
+                    </div>
+                    <div>
+                        <b>views:</b> {{ video.views_count }}
+                    </div>
                 </div>
             </div>
         </li>
@@ -91,7 +95,24 @@ template {
     gap: 1rem;
     justify-content: center;
     margin-top: 2rem;
-    height: 2rem;
+    height: 40px;
+}
+
+.searchbar {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 0.5rem;
+    width: 100%;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s;
+    /* Smooth border color transition */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Adds a subtle shadow */
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    size: 40;
+    margin-bottom: 12px;
 }
 
 input {
@@ -107,9 +128,9 @@ button {
     font-weight: bold;
 }
 
-div-list {
+.div-list {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     padding: 1rem;
 }
 
