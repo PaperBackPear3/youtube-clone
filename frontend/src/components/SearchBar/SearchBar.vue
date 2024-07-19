@@ -53,6 +53,9 @@ export default {
     <ul v-else-if="videos">
         <li v-for="video of videos" :key="video.id">
             titolo:{{ video.title }}
+            titolo:{{ video.description }}
+            titolo:{{ video.title }}
+            titolo:{{ video.title }}
         </li>
     </ul>
 </template>
