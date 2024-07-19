@@ -4,7 +4,13 @@ import SearchBar from '@/components/SearchBar/SearchBar.vue';
 </script>
 
 <template>
-    <div>
+    <div class="homepage">
         <SearchBar />
     </div>
 </template>
+
+<style scoped>
+.homepage {
+    padding: 12px;
+}
+</style>

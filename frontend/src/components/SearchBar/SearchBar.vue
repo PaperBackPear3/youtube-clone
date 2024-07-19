@@ -5,6 +5,7 @@ import { computed } from 'vue';
 import { ref } from 'vue';
 
 
+
 export default {
     setup() {
         const variables = ref({
@@ -32,7 +33,9 @@ export default {
 
         const videos = computed(() => result.value?.searchVideos ?? [])
 
-        return { videos, loading, searchVideos }
+        const url = 'https://www.researchgate.net/profile/Martin_Kampel/publication/228408900/figure/download/fig1/AS:301882221318148@1448985738964/An-image-with-resolution-256-x-256.png'
+
+        return { videos, loading, searchVideos, url }
     },
 
 }
@@ -51,6 +54,9 @@ export default {
     <div v-if="loading">Loading...</div>
     <ul v-else-if="videos">
         <li v-for="video of videos" :key="video.id">
+            <div class="image-div">
+                <img :src="url" alt="thumbnail" width="100%" height="100%" />
+            </div>
             <div>
                 <h1>
                     <b>titolo: {{ video.title }}</b>
@@ -87,6 +93,12 @@ template {
     /* Clips children if they overflow */
     min-height: 500px;
 
+}
+
+.image-div {
+    max-width: 256px;
+    max-height: 256px;
+    margin-right: 1rem;
 }
 
 .searchbar-container {
@@ -142,8 +154,6 @@ ul {
     padding: 0;
     font-family: Arial, sans-serif;
     /* Sets font for the list */
-    max-width: 600px;
-    /* Sets max width for better readability */
     background: #f9f9f9;
     /* Light background color */
     border-radius: 8px;
@@ -161,8 +171,6 @@ ul li {
     border-bottom: 1px solid #ddd;
     /* Adds a subtle divider line */
     display: flex;
-    /* Flexbox for better control */
-    align-items: center;
     /* Center align items */
     transition: background 0.3s;
     /* Smooth background color transition */

@@ -92,7 +92,7 @@ export default {
 .sidebar ul li {
     padding: 12px 18px;
     /* Adds padding inside the list items */
-    border-bottom: 1px solid #555;
+    /* border-bottom: 1px solid #555; */
     /* Adds a subtle divider line */
     display: flex;
     /* Flexbox for better control */
@@ -100,6 +100,8 @@ export default {
     /* Center align items */
     transition: background 0.3s;
     /* Smooth background color transition */
+
+    border-radius: 25px;
 }
 
 /* Last LI style - no border */

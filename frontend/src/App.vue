@@ -17,4 +17,8 @@ import HomePageView from './views/Home/HomePageView.vue';
   </header>
 </template>
 
-<style scoped></style>
+<style scoped>
+.wrapper {
+  margin-left: 250px;
+}
+</style>
