@@ -21,7 +21,7 @@ class VideoFactory extends Factory
     public function definition(): array
     {
         return [
-            'title' => $this->faker->slug,
+            'title' => $this->faker->name,
             'description' => $this->faker->text,
             'channel_id' => Channel::all()->random()->id,
             'views_count' => $this->faker->numberBetween(1, 1000),
