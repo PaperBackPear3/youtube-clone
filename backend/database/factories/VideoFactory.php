@@ -28,7 +28,7 @@ class VideoFactory extends Factory
             'likes_count' => $this->faker->numberBetween(1, 1000),
             'dislikes_count' => $this->faker->numberBetween(1, 1000),
             'comments_count' => $this->faker->numberBetween(1, 1000),
-            'length' => $this->faker->numberBetween(1, 10000),
+            'duration' => $this->faker->numberBetween(1, 10000),
             'thumbnail' => $this->faker->image,
             'video_path' => $this->faker->image,
         ];
