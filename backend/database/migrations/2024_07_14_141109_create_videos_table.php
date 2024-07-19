@@ -20,7 +20,7 @@ return new class extends Migration
             $table->unsignedBigInteger('likes_count');
             $table->unsignedBigInteger('dislikes_count');
             $table->unsignedBigInteger('comments_count');
-            $table->unsignedBigInteger('length');
+            $table->unsignedBigInteger('duration');
             $table->binary('thumbnail');
             $table->string('video_path');
             $table->timestamps();

@@ -16,6 +16,12 @@ export default {
         searchVideos(query: $userQuery) {
             id
             title
+            description
+            thumbnail
+            video_path
+            duration
+            views_count
+            updated_at
         }
         }
     `, variables)
